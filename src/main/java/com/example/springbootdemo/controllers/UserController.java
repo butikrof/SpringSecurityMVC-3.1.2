@@ -34,23 +34,23 @@ public class UserController {
         String username = userDetails.getUsername();
         User user = userService.findUserByUsername(username);
         model.addAttribute("user", user);
-        return "user";
+        return "userButstrap";
     }
+}
 
-
-
-    @GetMapping("/{id}/editUser")
+    //  return "user";
+   /* @GetMapping("/{id}/editUser")
     public String edit(Model model, @PathVariable("id") int id) {
         model.addAttribute("person", userService.getUserById(id));
         model.addAttribute("roles", roleService.getAllRoles());
         return "editUser";
-    }
+    }*/
 
 
 
 
 
-    @PatchMapping("/{id}")
+   /* @PatchMapping("/{id}")
     public String update(@ModelAttribute("person") @Valid User person, BindingResult bindingResult, @PathVariable("id") int id, @RequestParam(value = "role") String[] roleNames) {
        if (bindingResult.hasErrors()) {
             return "editUser";
@@ -65,6 +65,6 @@ public class UserController {
     public String delete(@PathVariable("id") int id) {
         userService.delete(id);
         return "redirect:/login";
-    }
+    }*/
 
-}
+
